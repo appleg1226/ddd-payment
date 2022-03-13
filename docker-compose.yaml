@@ -1,7 +1,7 @@
 version: '3'
 services:
-  mysql:
-    container_name: payment-mysql
+  mysql-command:
+    container_name: command-mysql
     image: mysql:8.0.21
     restart: always
     environment: # -e 옵션
@@ -10,6 +10,19 @@ services:
       - TZ=UTC
     ports:
       - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    platform: linux/amd64
+  mysql-query:
+    container_name: query-mysql
+    image: mysql:8.0.21
+    restart: always
+    environment: # -e 옵션
+      - MYSQL_DATABASE=payment
+      - MYSQL_ROOT_PASSWORD=payment
+      - TZ=UTC
+    ports:
+      - "3307:3307"
     volumes:
       - ./db:/var/lib/mysql
     platform: linux/amd64
