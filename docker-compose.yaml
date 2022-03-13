@@ -1,0 +1,31 @@
+version: '3'
+services:
+  mysql:
+    container_name: payment-mysql
+    image: mysql:8.0.21
+    restart: always
+    environment: # -e 옵션
+      - MYSQL_DATABASE=payment
+      - MYSQL_ROOT_PASSWORD=payment
+      - TZ=UTC
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    platform: linux/amd64
+  zookeeper:
+    container_name: payment-zookeeper
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka
+    container_name: payment-kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

@@ -1,0 +1,20 @@
+def javaProjects() {
+    return subprojects.findAll { new File(it.projectDir, "src").exists() }
+}
+
+subprojects {
+    configure(javaProjects()) {
+        apply plugin: "java"
+
+        group 'com.example'
+        version '0.0.1-SNAPSHOT'
+
+        repositories {
+            mavenCentral()
+        }
+
+        test {
+            useJUnitPlatform()
+        }
+    }
+}
