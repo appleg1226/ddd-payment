@@ -20,15 +20,14 @@ payment-command에서 발행한 이벤트를 Kafka로부터 consume하여 본인
 ```
 1. MySQL 8.0.21 for Command
 2. MySQL 8.0.21 for Query
-3. Kafka
+3. Kafka(Zookeeper)
 ```
-위의 인프라는 로컬 실행을 위해서 docker-compose를 이용하였다.
-```
-docker-compose up -d
-```
-CQRS에서 DB를 분리하는 방법은 여러가지가 있지만, 가장 보편적인(?) 방식인 물리 DB를 나누는 방식을 이용하였다.
-command와 query 모듈은 각각 다른 DB를 보게된다. 
+위의 인프라는 로컬 실행을 위해서 docker-compose를 이용하였다.  
 
-kafka의 경우 application.yaml에 특별한 설정 없이도 kafka에 자동으로 붙게 설정이 되어 있다.(autoconfigure 덕분에)
+> :warning: m1 맥북의 경우 docker-compose.yaml 파일에서 platform 관련 주석을 해제하고 실행할 것  
+
+- CQRS에서 DB를 분리하는 방법은 여러가지가 있지만, 가장 보편적인(?) 방식인 물리 DB를 나누는 방식을 이용하였다.  
+command와 query 모듈은 각각 다른 DB를 보게된다.  
+- kafka의 경우 application.yaml에 특별한 설정 없이도 kafka에 자동으로 붙게 설정이 되어 있다.(autoconfigure 덕분에)  
 이외의 운영을 위한 상세 설정은 생략했다.
 
