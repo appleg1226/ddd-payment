@@ -4,7 +4,7 @@ services:
     container_name: command-mysql
     image: mysql:8.0.21
     restart: always
-    environment: # -e 옵션
+    environment:
       - MYSQL_DATABASE=payment
       - MYSQL_ROOT_PASSWORD=payment
       - TZ=UTC
@@ -17,7 +17,7 @@ services:
     container_name: query-mysql
     image: mysql:8.0.21
     restart: always
-    environment: # -e 옵션
+    environment:
       - MYSQL_DATABASE=payment
       - MYSQL_ROOT_PASSWORD=payment
       - TZ=UTC
