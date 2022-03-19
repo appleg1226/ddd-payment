@@ -1,5 +1,7 @@
-package com.example.event;
+package com.example.common.infra;
 
+import com.example.common.event.DomainEvent;
+import com.example.common.event.EventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.kafka.core.KafkaTemplate;

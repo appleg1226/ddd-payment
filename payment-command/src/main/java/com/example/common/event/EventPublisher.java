@@ -1,4 +1,4 @@
-package com.example.event;
+package com.example.common.event;
 
 public interface EventPublisher {
 

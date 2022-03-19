@@ -1,6 +1,6 @@
 package com.example.payment.domain.event;
 
-import com.example.event.DomainEvent;
+import com.example.common.event.DomainEvent;
 import com.example.payment.infra.http.request.PaymentCompleteRequest;
 import java.io.Serializable;
 import java.math.BigDecimal;
