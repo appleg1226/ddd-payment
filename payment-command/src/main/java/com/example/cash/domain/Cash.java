@@ -1,5 +1,6 @@
-package com.example.user.domain;
+package com.example.cash.domain;
 
+import com.example.user.domain.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;

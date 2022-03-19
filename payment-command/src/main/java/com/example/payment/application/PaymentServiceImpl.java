@@ -1,6 +1,6 @@
 package com.example.payment.application;
 
-import com.example.user.domain.Cash;
+import com.example.cash.domain.Cash;
 import com.example.event.EventPublisher;
 import com.example.payment.domain.Payment;
 import com.example.payment.domain.PaymentRepository;

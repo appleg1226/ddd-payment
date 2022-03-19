@@ -1,5 +1,6 @@
 package com.example.user.domain;
 
+import com.example.cash.domain.Cash;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
