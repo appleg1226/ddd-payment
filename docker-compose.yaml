@@ -12,7 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - ./db:/var/lib/mysql
-#     platform: linux/amd64 # for m1 mac
+  #     platform: linux/amd64 # for m1 mac
   mysql-query:
     container_name: query-mysql
     image: mysql:8.0.21
@@ -22,10 +22,10 @@ services:
       - MYSQL_ROOT_PASSWORD=payment
       - TZ=UTC
     ports:
-      - "3307:3307"
+      - "3307:3306"
     volumes:
-      - ./db:/var/lib/mysql
-#    platform: linux/amd64 # for m1 mac
+      - ./db2:/var/lib/mysql
+  #    platform: linux/amd64 # for m1 mac
   zookeeper:
     container_name: payment-zookeeper
     image: wurstmeister/zookeeper
