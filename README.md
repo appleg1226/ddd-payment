@@ -83,14 +83,6 @@ CRUD 중에서 R 만을 담당하는 모듈이다. payment-command에서 발행�
     - Repository가 Controller에 직접 주입될 수 있다. 왜냐하면 DB 쿼리 외의 별다른 로직이 필요없기 때문이다.
     - 마찬가지 이유로 Response DTO도 사용하지 않는다. 이미 DB에 저장된 모든 정보가 Response에 최적화 시켜져 있기 때문이다.
 
-#### Query Model의 모듈 특징
-
-- Query 모델에서는 Consuming과 동시에 Query 모델에서 필요한 데이터로 가공한다고 가정한다.
-- 그러므로 몇 가지 요소가 생략될 수 있다.
-    - Repository가 Controller에 직접 주입될 수 있다. 왜냐하면 DB 쿼리 외의 별다른 로직이 필요없기 때문이다.
-    - 마찬가지 이유로 Response DTO도 사용하지 않는다. 이미 DB에 저장된 모든 정보가 Response에 최적화 시켜져 있기 때문이다.
-
-
 
 
 
